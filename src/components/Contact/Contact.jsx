@@ -1,26 +1,26 @@
-import { MdDelete, MdPerson, MdPhone } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
+import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps.js";
+import { deleteContact } from "../../redux/contacts/operations";
 
-export default function Contact({ data: { id, name, number } }) {
+export default function Contact({ name, number, id }) {
   const dispatch = useDispatch();
-  const handleDelete = () => {
-    dispatch(deleteContact(id));
-  };
+
+  const handleDelete = () => dispatch(deleteContact(id));
   return (
-    <>
-      <div>
-        <p>
-          <MdPerson />
-          {name}
-        </p>
-        <p>
-          <MdPhone /> {number}
-        </p>
+    <div className={css.container}>
+      <div className={css.wraper}>
+        <FaUser />
+        <div>{name}</div>
+
+        <FaPhone />
+        <div>{number}</div>
       </div>
-      <button onClick={handleDelete}>
-        <MdDelete /> Delete
+      <button type="button" className={css.btn} onClick={handleDelete}>
+        Delete
       </button>
-    </>
+    </div>
   );
 }
+

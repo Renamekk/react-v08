@@ -1,24 +1,51 @@
-.contactForm {
-    min-width: 300px;
-    max-width: max-content;
-    padding: 0.5rem;
+.form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    border: 2px solid #202020;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.contact {
-    display: flex;
-    flex-direction: column;
-    padding: 0.2rem;
-    gap: 0.2rem;
-}
-
-.formError {
-    display: block;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
     max-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.wrapperFormName {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.wrapperFormNumber {
+    display: flex;
+    gap: 5px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.input {
+    max-width: 150px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    max-width: 100px;
+    max-height: 30px;
+    border-radius: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #d2c9c9;
+    border-color: transparent;
+}
+
+.errorMessageName {
     color: red;
+    position: absolute;
+    top: 30px;
+}
+
+.errorMessageNumber {
+    color: red;
+    position: absolute;
+    top: 65px;
 }
